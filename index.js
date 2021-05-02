@@ -37,6 +37,11 @@ inquirer
     {
         type: 'input',
         message: 'What license is your project using',
+        name: 'badgeResponse',
+      },
+    {
+        type: 'input',
+        message: 'Explain which license the application is covered under',
         name: 'license',
       },
     {
@@ -51,8 +56,45 @@ inquirer
       },
   ])
 
+  
   .then((response) =>
-  fs.writeFile('README.md'), (err) =>
+  fs.writeFile('README.md',`
+# ${title}
+
+${badge}
+
+## Description
+${descript}
+
+## Table of Contents
+
+- [Installation Instrutions](#InstallationInstrutions)
+- [Usage information](#usageinformation)
+- [Contribution information](#contributioninformation)
+- [Testing](#testing)
+- [License](#license)
+- [Questions](#questions)
+
+## Installation Instrutions
+${install}
+
+## Usage information
+${usage}
+
+## Contribution information
+${contrib}
+
+## Testing
+${test}
+
+## License
+${license}
+
+## Questions
+This project is located on my github: ${github}
+
+If you have any questions please contact me at: ${email}
+`), (err) =>
   err ? console.error(err) : console.log('README created!')
   
 );
