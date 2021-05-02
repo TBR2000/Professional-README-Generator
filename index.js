@@ -48,6 +48,11 @@ inquirer
       },
     {
         type: 'input',
+        message: 'What is the name of your repository?',
+        name: 'repo',
+      },
+    {
+        type: 'input',
         message: 'What email should questions be directed to?',
         name: 'email',
       },
@@ -65,10 +70,14 @@ inquirer
       }, 
   ])
 
-.then((response) => licensing(licenseResponse)
+.then((response) => {
+  renderLicenseBadge(licenseResponse);
+  renderLicenseLink(licenseResponse);
+  renderLicenseSection(licenseResponse);
+
+})
     //render license and badge here
   
-
   .then((response) =>
   fs.writeFile('README.md',`
 # ${title}
@@ -105,7 +114,7 @@ ${test}
 ${license}
 
 ## Questions
-This project is located on my github: ${github}
+This project is located on my github: ${github}, In the repository ${repo}
 
 If you have any questions please contact me at: ${email}
 
@@ -119,7 +128,7 @@ ${links}
 `), (err) =>
   err ? console.error(err) : console.log('README created!')
   
-));
+);
 
 
 // TODO: Create an array of questions for user input
