@@ -1,6 +1,7 @@
 // TODO: Include packages needed for this application
 const fs = require('fs');
 const inquirer = require('inquirer');
+let licensing = require('./utils/generateMarkdown')
 
 inquirer
   .prompt([
@@ -35,14 +36,10 @@ inquirer
         name: 'test',
       },
     {
-        type: 'input',
+        type: 'list',
         message: 'What license is your project using',
-        name: 'badgeResponse',
-      },
-    {
-        type: 'input',
-        message: 'Explain which license the application is covered under',
-        name: 'license',
+        name: 'licenseResponse',
+        choices: ['MIT', 'Apache', 'Apache 2', 'MIT/Apache-2.0', 'lgpl_2_1', 'GPL', 'GPL(>=2)', 'BSD'],
       },
     {
         type: 'input',
@@ -54,9 +51,24 @@ inquirer
         message: 'What email should questions be directed to?',
         name: 'email',
       },
+
+    {
+        type: 'input',
+        message: 'Provide links to screenshots of your project',
+        name: 'images',
+      },
+
+    {
+        type: 'input',
+        message: 'What are the links to your deployed project and Repo',
+        name: 'links',
+      }, 
   ])
 
+.then((response) => licensing(licenseResponse)
+    //render license and badge here
   
+
   .then((response) =>
   fs.writeFile('README.md',`
 # ${title}
@@ -74,6 +86,8 @@ ${descript}
 - [Testing](#testing)
 - [License](#license)
 - [Questions](#questions)
+- [Screenshots](#screenshots)
+- [Links](#links)
 
 ## Installation Instrutions
 ${install}
@@ -94,10 +108,18 @@ ${license}
 This project is located on my github: ${github}
 
 If you have any questions please contact me at: ${email}
+
+##Screenshots
+Screenshots of the deployed project:
+${images}
+
+##Links 
+Links to the deployed project and Github Respository:
+${links}
 `), (err) =>
   err ? console.error(err) : console.log('README created!')
   
-);
+));
 
 
 // TODO: Create an array of questions for user input
