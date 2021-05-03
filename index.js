@@ -59,26 +59,34 @@ const questions = [
 
   {
       type: 'input',
-      message: 'Provide links to screenshots of your project',
+      message: 'Provide link to a screenshot of your project',
       name: 'images',
     },
 
   {
       type: 'input',
-      message: 'What are the links to your deployed project and Repo',
-      name: 'links',
+      message: 'What is the link to your Repo?',
+      name: 'linkRepo',
+    }, 
+  {
+      type: 'input',
+      message: 'What is the link to your deployed project?',
+      name: 'linkDeploy',
     }, 
 ];
 
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('README created!'))
+  fs.writeFile(fileName, data, (err) => 
+  err ? console.error(err) : console.log('README created!'))
 }
 
 // TODO: Create a function to initialize app
 function init() {
-  inquirer.prompt(questions).then((data) => {
-            writeToFile('./readme/README.md', generateMarkdown(data));
+  inquirer.prompt(questions)
+      .then((data) => {
+        writeToFile('./readme/README.md', generateMarkdown(data));
   });
 }
 // Function call to initialize app

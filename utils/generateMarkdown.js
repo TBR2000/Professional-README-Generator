@@ -53,7 +53,7 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-![${data.licenseResponse}](${renderLicenseBadge(data)})
+  ![${data.licenseResponse}](${renderLicenseBadge(data)})
 
 ## Description
 ${data.descript}
@@ -69,7 +69,7 @@ ${data.descript}
 - [Screenshots](#screenshots)
 - [Links](#links)
 
-## Installation Instrutions
+## Installation Instructions
 ${data.install}
 
 ## Usage information
@@ -85,17 +85,19 @@ ${data.test}
 **${renderLicenseLink(data)}**
 
 ## Questions
-This project is located on my github: ${data.github}, In the repository ${data.repo}
+My github username is: ${data.github} and the repository for this project is: ${data.repo}
 
 If you have any questions please contact me at: ${data.email}
 
 ## Screenshots
-Screenshots of the deployed project:
+Screenshot of the deployed project:
 ![screenshot](${data.images})
 
+
 ## Links 
-Links to the deployed project and Github Respository:
-${data.links}
+Links to the deployed project and Github Repository
+Repository: **${data.linkRepo}**
+Deployed Project: **${data.linkDeploy}**
 `;}
 
 module.exports = generateMarkdown;
