@@ -60,9 +60,9 @@ ${data.descript}
 
 ## Table of Contents
 
-- [Installation Instrutions](#InstallationInstrutions)
-- [Usage information](#usageinformation)
-- [Contribution information](#contributioninformation)
+- [Installation Instructions](#Installation Instructions)
+- [Usage information](#Usage information)
+- [Contribution information](#Contribution information)
 - [Testing](#testing)
 - [License](#license)
 - [Questions](#questions)
@@ -99,6 +99,7 @@ Screenshot of the deployed project:
 Links to the deployed project and Github Repository
 
 Repository: **${data.linkRepo}**
+
 Deployed Project: **${data.linkDeploy}**
 `;}
 

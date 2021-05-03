@@ -8,22 +8,22 @@ This project is for generating quaility readme files quickly and easily
 
 ## Table of Contents
 
-- [Installation Instrutions](#InstallationInstrutions)
-- [Usage information](#usageinformation)
-- [Contribution information](#contributioninformation)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
 - [Testing](#testing)
 - [License](#license)
 - [Questions](#questions)
 - [Screenshots](#screenshots)
 - [Links](#links)
 
-## Installation Instructions
+## Installation
 Clone repo and add to VS.code
 
-## Usage information
+## Usage
 Open the terminal and use :bash, type in 'node index' and follow the prompts, your readme will be placed in the readme folder
 
-## Contribution information
+## Contributions
 Contact me to contribute
 
 ## Testing
@@ -47,4 +47,5 @@ Screenshot of the deployed project:
 Links to the deployed project and Github Repository
 
 Repository: **https://github.com/TBR2000/Professional-README-Generator**
+
 Deployed Project: ****
