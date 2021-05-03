@@ -60,22 +60,22 @@ ${data.descript}
 
 ## Table of Contents
 
-- [Installation Instructions](#Installation Instructions)
-- [Usage information](#Usage information)
-- [Contribution information](#Contribution information)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributions](#contributions)
 - [Testing](#testing)
 - [License](#license)
 - [Questions](#questions)
 - [Screenshots](#screenshots)
 - [Links](#links)
 
-## Installation Instructions
+## Installation
 ${data.install}
 
-## Usage information
+## Usage
 ${data.usage}
 
-## Contribution information
+## Contributions
 ${data.contrib}
 
 ## Testing
