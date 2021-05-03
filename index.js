@@ -8,12 +8,12 @@ const questions = [
   {
     type: 'input',
     message: 'What is the title of your project?',
-    name: 'Title',
+    name: 'title',
   },
   {
     type: 'input',
     message: 'Give a brief description of your project',
-    name: 'Descript',
+    name: 'descript',
   },
   {
     type: 'input',
@@ -39,7 +39,7 @@ const questions = [
       type: 'list',
       message: 'What license is your project using',
       name: 'licenseResponse',
-      choices: ['MIT', 'Apache', 'Apache 2', 'MIT/Apache-2.0', 'lgpl_2_1', 'GPL', 'GPL(>=2)', 'BSD'],
+      choices: ['MIT', 'Apache', 'Apache-2.0', 'MPL-2.0', 'EPL-1.0','BSD-2-Clause','BSD-3-Clause'],
     },
   {
       type: 'input',
@@ -72,13 +72,13 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-      fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('README created!'))
+  fs.writeFile(fileName, data, (err) => err ? console.error(err) : console.log('README created!'))
 }
 
 // TODO: Create a function to initialize app
 function init() {
   inquirer.prompt(questions).then((data) => {
-            writeToFile('README.md', generateMarkdown(data));
+            writeToFile('./readme/README.md', generateMarkdown(data));
   });
 }
 // Function call to initialize app

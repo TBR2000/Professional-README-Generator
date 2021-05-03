@@ -2,21 +2,45 @@
 // If there is no license, return an empty string
 
 function renderLicenseBadge(data) {
-  if(!data.licenseResponse){
-    let bagde = {}
-  }else{
-    let badge = 'https://img.shields.io/github/license/' + data.github + '/' + data.repo + '?style=plastic'
-  }
+ switch(data.licenseResponse){
+case 'MIT':
+  badge = 'https://img.shields.io/badge/License-MIT-yellow.svg'
   return (badge)
-}
-
+  break;
+  case 'Apache':
+    badge = 'https://img.shields.io/badge/License-Apache-blue.svg'
+    return (badge)
+    break;
+  case 'Apache-2.0':
+    badge = 'https://img.shields.io/badge/License-Apache%202.0-blue.svg'
+    return (badge)
+    break;
+  case 'MPL-2.0':
+    badge = 'https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg'
+    return (badge)
+    break;
+  case 'EPL-1.0':  
+    badge = 'https://img.shields.io/badge/License-EPL%201.0-red.svg'
+  case 'BSD-2-Clause':
+    badge = 'https://img.shields.io/badge/License-BSD%202--Clause-orange.svg'
+    return (badge)
+    break;
+  case 'BSD-3-Clause':
+    badge = 'https://img.shields.io/badge/License-BSD%203--Clause-blue.svg' 
+    return (badge)
+    break;
+    default:
+      badge = {} 
+      return (badge)
+ }};
+ 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(data) {
   if(!data.licenseResponse){
-    let licenseUrl = {}
+    licenseUrl = {}
   }else{
-    let licenseUrl = 'https://opensource.org/licenses/' + data.licenseResponse
+    licenseUrl = 'https://opensource.org/licenses/' + data.licenseResponse
   }
  return(licenseUrl)
 };
@@ -29,7 +53,7 @@ function generateMarkdown(data) {
   return `
 # ${data.title}
 
-${renderLicenseBadge(licenseResponse)}
+![${data.licenseResponse}](${renderLicenseBadge(data)})
 
 ## Description
 ${data.descript}
@@ -58,18 +82,18 @@ ${data.contrib}
 ${data.test}
 
 ## License
-${renderLicenseLink(licenseResponse)}
+**${renderLicenseLink(data)}**
 
 ## Questions
 This project is located on my github: ${data.github}, In the repository ${data.repo}
 
 If you have any questions please contact me at: ${data.email}
 
-##Screenshots
+## Screenshots
 Screenshots of the deployed project:
-${data.images}
+![screenshot](${data.images})
 
-##Links 
+## Links 
 Links to the deployed project and Github Respository:
 ${data.links}
 `;}
