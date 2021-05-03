@@ -91,11 +91,13 @@ If you have any questions please contact me at: ${data.email}
 
 ## Screenshots
 Screenshot of the deployed project:
+
 ![screenshot](${data.images})
 
 
 ## Links 
 Links to the deployed project and Github Repository
+
 Repository: **${data.linkRepo}**
 Deployed Project: **${data.linkDeploy}**
 `;}
